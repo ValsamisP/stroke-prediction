@@ -4,7 +4,7 @@ A comprehensive machine learning project for predicting stroke risk and providin
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 This project implements a complete end-to-end machine learning pipeline for stroke prediction, including:
 
@@ -47,7 +47,7 @@ stroke-prediction/
 
 ---
 
-## 🚀 Quick Start (Docker – Recommended)
+## Quick Start (Docker – Recommended)
 
 This is the **recommended and fully reproducible way** to run the project.
 
