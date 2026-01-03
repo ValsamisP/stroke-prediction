@@ -36,7 +36,12 @@ class StrokeRiskAssessment:
             self.feature_importance = None
     
     def preprocess_input(self, user_data: Dict) -> np.ndarray:
-        """Preprocess user input data."""
+        """Preprocess user input data.
+        Steps:
+        1. One-hot encode categorical variables
+        2. Scale numerical features
+        3. Ensure correct feature order
+        """
         # Create DataFrame
         df = pd.DataFrame([user_data])
         

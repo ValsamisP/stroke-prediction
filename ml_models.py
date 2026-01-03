@@ -175,7 +175,14 @@ class StrokePredictor:
         print("="*60)
     
     def evaluate_model(self, model_name: str) -> Dict[str, float]:
-        """Evaluate a single model."""
+        """Evaluate a single model.
+        Metrics calculated:
+        - Accuracy
+        - Precision
+        - Recall
+        - F1-Score
+        - ROC-AUC
+        """
         model = self.models[model_name]
         
         # Predictions
@@ -317,7 +324,13 @@ class StrokePredictor:
             print(top_features.to_string(index=False))
     
     def save_best_model(self, model_name: str, filepath: str = 'best_model.pkl'):
-        """Save the best model and preprocessing objects."""
+        """Save the best model and preprocessing objects.
+        Saves a dictionary containing:
+        - model: Trained classifier
+        - scaler: StandardScaler for numerical features
+        - encoders: OneHotEncoder for categorical features
+        - feature_names: List of feature names in correct order
+        """
         save_dict = {
             'model': self.models[model_name],
             'scaler': self.scaler,

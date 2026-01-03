@@ -20,14 +20,18 @@ This project implements a complete end-to-end machine learning pipeline for stro
 ```
 stroke-prediction/
 │
-├── healthcaredatasetstrokedata.csv
-├── visualization.py
-├── ml_models.py
-├── app.py
-├── config.py
-├── requirements.txt
-├── Dockerfile
-├── README.md
+├── healthcaredatasetstrokedata.csv # Kaggle stroke dataset
+├── visualization.py # EDA plotting functions
+├── ml_models.py # Model training and evaluation functions
+├── app.py # Streamlit web application
+├── config.py # Configuration parameters
+├── requirements.txt # Python dependencies
+├── Dockerfile # Container configuration
+├── README.md 
+├── .dockerignore # Docker build exclusions
+├── test_predictions.py # Prediction testing utilities
+├── 1.ipynb # A few plots for small overview
+├── main.py # Main execution script
 │
 ├── plots/
 │   ├── class_distribution.png
@@ -139,22 +143,75 @@ streamlit run app.py
 
 ---
 
-## Machine Learning Models
 
-### Models Implemented
-1. Logistic Regression  
-2. Random Forest  
-3. XGBoost  
-4. Support Vector Machine (SVM)
+## Data Flow
 
-### Evaluation Metrics
-- Accuracy  
-- Precision  
-- Recall (prioritized)  
-- F1-Score  
-- ROC-AUC  
+### 1. Data Loading and Preprocessing
+
+Raw CSV File
+    ↓
+Load into pandas DataFrame
+    ↓
+Remove ID column
+    ↓
+Handle missing BMI values
+    ↓
+Encode categorical variables (One-Hot Encoding)
+    ↓
+Scale numerical features (StandardScaler)
+    ↓
+Split into train/test (80/20)
+    ↓
+Apply SMOTE to training data
+    ↓
+Ready for model training
+
+### 2. Model Training Pipeline
+
+Preprocessed Data
+    ↓
+Train 4 models in parallel:
+    ├── Random Forest
+    ├── XGBoost
+    ├── Logistic Regression
+    └── SVM
+    ↓
+Evaluate each model:
+    ├── Accuracy
+    ├── Precision
+    ├── Recall
+    ├── F1-Score
+    └── ROC-AUC
+    ↓
+Compare models
+    ↓
+Select best model (based on Recall)
+    ↓
+Save best model + preprocessing objects
+
+### 3. Prediction Pipeline
+
+User Input (Web App)
+    ↓
+Validate input
+    ↓
+Apply same preprocessing:
+    ├── One-Hot Encoding
+    ├── Feature Scaling
+    └── Feature Ordering
+    ↓
+Load saved model
+    ↓
+Make prediction
+    ↓
+Calculate probability
+    ↓
+Generate recommendations
+    ↓
+Display to user
 
 ---
+
 
 ## Educational Purpose
 
