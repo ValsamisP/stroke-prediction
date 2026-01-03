@@ -148,23 +148,15 @@ streamlit run app.py
 
 ### 1. Data Loading and Preprocessing
 
-Raw CSV File
-    ↓
-Load into pandas DataFrame
-    ↓
-Remove ID column
-    ↓
-Handle missing BMI values
-    ↓
-Encode categorical variables (One-Hot Encoding)
-    ↓
-Scale numerical features (StandardScaler)
-    ↓
-Split into train/test (80/20)
-    ↓
-Apply SMOTE to training data
-    ↓
-Ready for model training
+1.Raw CSV File
+2.Load into pandas DataFrame
+3.Remove ID column
+4.Handle missing BMI values
+5.Encode categorical variables (One-Hot Encoding)
+6.Scale numerical features (StandardScaler)
+7.Split into train/test (80/20) 
+8.Apply SMOTE to training data
+9.Ready for model training
 
 ### 2. Model Training Pipeline
 
