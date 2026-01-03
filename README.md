@@ -135,6 +135,8 @@ This project is designed to be **fully reproducible**.
 
 ## Running Without Docker (Optional)
 
+After cloning and changing to the correct directory (first two steps on the docker way)
+
 ```bash
 pip install -r requirements.txt
 streamlit run app.py
