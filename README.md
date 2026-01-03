@@ -58,10 +58,25 @@ This is the **recommended and fully reproducible way** to run the project.
 ### Prerequisites
 - Docker Desktop  -- Get Docker (https://docs.docker.com/get-started/get-docker/)
 - **Windows users:** WSL 2 must be enabled  
+---
+
+### Clone the Repository
+
+```
+git clone https://github.com/ValsamisP/stroke-prediction.git
+```
 
 ---
 
-### 1️⃣ Build the Docker Image
+### Go to the folder directory
+
+```
+cd stroke-prediction
+```
+
+---
+
+###  Build the Docker Image
 
 ```bash
 docker build -t stroke-ml-app .
@@ -69,7 +84,7 @@ docker build -t stroke-ml-app .
 
 ---
 
-### 2️⃣ Run the Application
+###  Run the Application
 
 ```bash
 docker run -p 8501:8501 stroke-ml-app
@@ -77,11 +92,10 @@ docker run -p 8501:8501 stroke-ml-app
 
 ---
 
-### 3️⃣ Open in Browser
+###  Open in Browser
 
-```
-http://localhost:8501
-```
+Open on your browser: http://localhost:8501
+
 
 ✅ No local Python installation required  
 ✅ Same behavior on Windows, macOS, and Linux  
