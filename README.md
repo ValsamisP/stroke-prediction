@@ -138,6 +138,10 @@ This project is designed to be **fully reproducible**.
 After cloning and changing to the correct directory (first two steps on the docker way)
 
 ```bash
+python -m venv venv
+source venv/bin/activate # On MacOs
+# On Windows: venv\Scripts\activate
+
 pip install -r requirements.txt
 streamlit run app.py
 ```
