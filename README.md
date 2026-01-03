@@ -149,36 +149,44 @@ streamlit run app.py
 ### 1. Data Loading and Preprocessing
 
 1.Raw CSV File
+
 2.Load into pandas DataFrame
+
 3.Remove ID column
+
 4.Handle missing BMI values
+
 5.Encode categorical variables (One-Hot Encoding)
+
 6.Scale numerical features (StandardScaler)
+
 7.Split into train/test (80/20) 
+
 8.Apply SMOTE to training data
+
 9.Ready for model training
 
 ### 2. Model Training Pipeline
 
 Preprocessed Data
-    ↓
+
 Train 4 models in parallel:
     ├── Random Forest
     ├── XGBoost
     ├── Logistic Regression
     └── SVM
-    ↓
+
 Evaluate each model:
     ├── Accuracy
     ├── Precision
     ├── Recall
     ├── F1-Score
     └── ROC-AUC
-    ↓
+
 Compare models
-    ↓
+
 Select best model (based on Recall)
-    ↓
+
 Save best model + preprocessing objects
 
 ### 3. Prediction Pipeline
