@@ -56,7 +56,7 @@ stroke-prediction/
 This is the **recommended and fully reproducible way** to run the project.
 
 ### Prerequisites
-- Docker Desktop  
+- Docker Desktop  -- Get Docker (https://docs.docker.com/get-started/get-docker/)
 - **Windows users:** WSL 2 must be enabled  
 
 ---
