@@ -167,9 +167,9 @@ streamlit run app.py
 9.Ready for model training
 
 ### 2. Model Training Pipeline
-
+```
 Preprocessed Data
-
+    ↓
 Train 4 models in parallel:
     ├── Random Forest
     ├── XGBoost
@@ -182,12 +182,14 @@ Evaluate each model:
     ├── Recall
     ├── F1-Score
     └── ROC-AUC
-
+    ↓
 Compare models
-
+    ↓
 Select best model (based on Recall)
-
+    ↓
 Save best model + preprocessing objects
+
+```
 
 ### 3. Prediction Pipeline
 
