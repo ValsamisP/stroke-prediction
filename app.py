@@ -11,7 +11,7 @@ import plotly.graph_objects as go
 import plotly.express as px
 from typing import Dict, List, Tuple
 import sklearn
-assert sklearn.__version__ == "1.6.1"
+assert sklearn.__version__ == "1.3.0"
 
 
 
