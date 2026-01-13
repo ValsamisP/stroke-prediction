@@ -56,12 +56,27 @@ stroke-prediction/
 This is the **recommended and fully reproducible way** to run the project.
 
 ### Prerequisites
-- Docker Desktop  
+- Docker Desktop  -- Get Docker (https://docs.docker.com/get-started/get-docker/)
 - **Windows users:** WSL 2 must be enabled  
+---
+
+### Clone the Repository
+
+```
+git clone https://github.com/ValsamisP/stroke-prediction.git
+```
 
 ---
 
-### 1️⃣ Build the Docker Image
+### Go to the folder directory
+
+```
+cd stroke-prediction
+```
+
+---
+
+###  Build the Docker Image
 
 ```bash
 docker build -t stroke-ml-app .
@@ -69,7 +84,7 @@ docker build -t stroke-ml-app .
 
 ---
 
-### 2️⃣ Run the Application
+###  Run the Application
 
 ```bash
 docker run -p 8501:8501 stroke-ml-app
@@ -77,11 +92,10 @@ docker run -p 8501:8501 stroke-ml-app
 
 ---
 
-### 3️⃣ Open in Browser
+###  Open in Browser
 
-```
-http://localhost:8501
-```
+Open on your browser: http://localhost:8501
+
 
 ✅ No local Python installation required  
 ✅ Same behavior on Windows, macOS, and Linux  
@@ -121,7 +135,13 @@ This project is designed to be **fully reproducible**.
 
 ## Running Without Docker (Optional)
 
+After cloning and changing to the correct directory (first two steps on the docker way)
+
 ```bash
+python -m venv venv
+source venv/bin/activate # On MacOs
+# On Windows: venv\Scripts\activate
+
 pip install -r requirements.txt
 streamlit run app.py
 ```
@@ -147,7 +167,7 @@ streamlit run app.py
 ## Data Flow
 
 ### 1. Data Loading and Preprocessing
-
+```
 Raw CSV File
     ↓
 Load into pandas DataFrame
@@ -160,14 +180,15 @@ Encode categorical variables (One-Hot Encoding)
     ↓
 Scale numerical features (StandardScaler)
     ↓
-Split into train/test (80/20)
+Split into train/test (80/20) 
     ↓
 Apply SMOTE to training data
     ↓
 Ready for model training
 
+```
 ### 2. Model Training Pipeline
-
+```
 Preprocessed Data
     ↓
 Train 4 models in parallel:
@@ -175,7 +196,7 @@ Train 4 models in parallel:
     ├── XGBoost
     ├── Logistic Regression
     └── SVM
-    ↓
+
 Evaluate each model:
     ├── Accuracy
     ├── Precision
@@ -189,7 +210,11 @@ Select best model (based on Recall)
     ↓
 Save best model + preprocessing objects
 
+```
+
 ### 3. Prediction Pipeline
+
+```
 
 User Input (Web App)
     ↓
@@ -209,6 +234,7 @@ Calculate probability
 Generate recommendations
     ↓
 Display to user
+```
 
 ---
 
